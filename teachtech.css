@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@100&display=swap");
+
 :root {
   --white: #ffffff;
   --color1: hsl(230, 50%, 81%);
@@ -7,7 +8,7 @@
   --shade1: hsl(0, 0%, 90%);
   --shade2: hsl(0, 0%, 50%);
   --shade3: hsl(0, 0%, 10%);
-  --menu-speed: 0.75s;
+  --menu-speed: 0.5s;
 }
 
 * {
@@ -58,14 +59,20 @@ p {
 
 ul li {
   text-decoration: none;
-  list-style: circle;
+  /* display: inline; */
+}
+
+.list-container .row {
+  display: flex;
+  align-items: center;
+  padding: 1vh;
+  /* flex-direction: column; */
 }
 
 /* HAMBURGER BEGIN */
 
 .container {
-  max-width: 800px;
-  margin: auto;
+  margin-right: auto;
   overflow: hidden;
   padding: 0 3rem;
 }
@@ -79,27 +86,28 @@ ul li {
 
 .menu-wrap .toggler {
   position: absolute;
-  top: 10px;
-  left: 85vw;
+  top: 2vh;
+  left: 81vw;
   z-index: 2;
   cursor: pointer;
-  width: 50px;
-  height: 50px;
+  width: 16vw;
+  height: 16vw;
   opacity: 0;
 }
 
 .menu-wrap .hamburger {
-  position: absolute;
-  top: 10px;
-  left: 85vw;
-  z-index: 1;
-  width: 60px;
-  height: 60px;
-  padding: 1rem;
-  background: var(--color3);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 2vh;
+  left: 81vw;
+  z-index: 1;
+  width: 16vw;
+  height: 16vw;
+  padding: 1rem;
+  background: var(--color3);
+  border-radius: 1vw;
 }
 
 .menu-wrap .hamburger > div {
@@ -111,7 +119,7 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 }
 
 .menu-wrap .hamburger > div::before,
@@ -229,9 +237,9 @@ ul li {
 
 .site-logo {
   background-color: var(--white);
-  margin: 0px 0px 0px 50px;
-  height: 100px;
-  width: 100px;
+  margin: 0 0 0 5vw;
+  width: 24vw;
+  height: 24vw;
 }
 
 /* FULL WIDTH NAV */
@@ -267,7 +275,8 @@ ul li {
 /* HERO */
 
 .hero {
-  align-items: center;
+  display: flex;
+  align-content: flex-end;
   justify-content: center;
   text-align: center;
   background-color: var(--color3);
@@ -284,14 +293,10 @@ ul li {
   text-align: left;
 }
 
-.hero-text h1 {
-  text-shadow: 5px 5px 5px var(--shade2);
-}
-
 .logo-wrapper {
   display: grid;
   grid-auto-flow: column;
-  /* justify-content: space-around; */
+  padding: 2vw;
   margin: 6vh 0vh 6vh 0vh;
 }
 .logo {
@@ -344,7 +349,6 @@ ul li {
   background-color: var(--color3);
   opacity: 0.9;
   max-width: 70vw;
-  padding: 50px 50px 50px 50px;
 }
 
 .about-half-hidden {
@@ -354,9 +358,10 @@ ul li {
   opacity: 0.1;
 }
 
-.about-text {
-  padding: 100px 10px;
+.about-text li {
+  list-style: none;
   text-align: left;
+  margin-left: 5vw;
   width: 100%;
 }
 
@@ -481,14 +486,8 @@ ul li {
   transition: 0.5s;
 }
 
-.card:nth-child(1) .box .content a {
-  background: var(--white);
-}
-
-.card:nth-child(2) .box .content a {
-  background: var(--white);
-}
-
+.card:nth-child(1) .box .content a,
+.card:nth-child(2) .box .content a,
 .card:nth-child(3) .box .content a {
   background: var(--white);
 }
@@ -523,23 +522,15 @@ ul li {
 }
 
 .card .box .content {
-  padding: 20px;
+  padding: 4vw;
   text-align: center;
-}
-
-.card .box .content h2 {
-  position: absolute;
-  top: -10px;
-  right: 30px;
-  font-size: 8rem;
-  color: var(--color3);
 }
 
 .card .box .content h3 {
   font-size: 1.8rem;
   color: var(--white);
   z-index: 1;
-  transition: 0.5s;
+  transition: 0.3s;
   margin-bottom: 15px;
 }
 
@@ -548,19 +539,20 @@ ul li {
   font-weight: 300;
   color: var(--white);
   z-index: 1;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .card .box .content a {
   position: relative;
   display: inline-block;
-  padding: 8px 20px;
+  padding: 3vh 6vh;
   background: black;
-  border-radius: 5px;
+  border-radius: 1vw;
+  font-weight: bold;
   text-decoration: none;
   color: var(--color3);
-  margin-top: 20px;
-  transition: 0.5s;
+  margin-top: 4vh;
+  transition: 0.3s;
 }
 
 .card .box .content a:hover {
@@ -639,6 +631,7 @@ ul li {
 
 @media (max-width: 800px) {
   body {
+    /* display: none; */
     font-size: 1em;
     line-height: 1.2em;
   }
@@ -683,35 +676,27 @@ ul li {
 @media (max-width: 400px) {
   body {
     /* display: none; */
-    font-size: 0.9em;
-    line-height: 1.4em;
-  }
-  .nav {
-    display: none;
+    font-size: 1em;
+    line-height: 1.2em;
   }
   .hero > h1 {
-    height: 100%;
     /* display: none; */
+    /* background-color: red; */
+    margin-left: 5vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    text-align: center;
-    background-color: var(--color3);
-    background-image: url(images/manscreen-mobile.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* text-align: center; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
   }
-
-  .hero {
-    background-color: pink;
-  }
-
   .about-half-overlay {
     max-width: 100vw;
     padding: 15px;
   }
   .about-text {
-    padding: 10px;
+    padding: 3vw;
   }
   .feature-row {
     display: block;
@@ -725,7 +710,6 @@ ul li {
     flex-direction: column;
     justify-content: center;
   }
-
   .contact-container-main {
     flex-direction: column;
     align-items: center;
