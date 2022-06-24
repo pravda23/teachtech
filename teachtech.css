@@ -83,9 +83,13 @@ ul li {
 }
 
 .menu-wrap .toggler {
-  position: absolute;
-  top: 1vh;
-  left: 85vw;
+  position: fixed;
+  top: 4vh;
+  right: 0.5em;
+  width: 9vw;
+  height: 9vw;
+  max-height: 3em;
+  max-width: 3em;
   z-index: 2;
   cursor: pointer;
   width: 9vw;
@@ -97,13 +101,15 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 1vh;
-  left: 85vw;
-  z-index: 1;
+  position: fixed;
+  top: 4vh;
+  right: 0.5em;
   width: 9vw;
   height: 9vw;
-  padding: 0.7em;
+  max-height: 3em;
+  max-width: 3em;
+  z-index: 1;
+  padding: 0.5em;
   background: var(--color3);
   border-radius: 1vw;
 }
@@ -232,14 +238,17 @@ ul li {
   display: flex;
   background-color: var(--white);
   flex-grow: 4;
-  padding-right: 4vw;
+  /* padding-right: 4vw; */
 }
 
 .site-logo {
-  background-color: var(--white);
-  margin: 0 0 0 5vw;
-  width: 12vw;
-  height: 12vw;
+  background-image: url(/images/logo-square.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 0 0 1vw;
+  width: 25vw;
+  height: 25vw;
+  max-height: 7em;
 }
 
 /* FULL WIDTH NAV */
@@ -259,6 +268,7 @@ ul li {
   margin-right: 2rem;
   align-items: center;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .nav a {
@@ -270,6 +280,7 @@ ul li {
   display: block;
   color: var(--white);
   background-color: var(--color3);
+  border-radius: 0.5em;
 }
 
 /* HERO */
@@ -299,6 +310,7 @@ ul li {
   align-content: flex-end;
   margin-bottom: 10vh;
   text-align: left;
+  text-shadow: 1px black solid;
 }
 
 .logo-wrapper {
@@ -381,11 +393,12 @@ ul li {
 
 #software:before,
 #training:before,
-#cards:before {
+#cards:before,
+#contact:before {
   display: block;
   content: "";
-  height: 9vh;
-  margin: -9vh 0 0;
+  height: 6em;
+  margin: -6em 0 0;
 }
 
 .feature-container {
@@ -452,9 +465,14 @@ ul li {
 
 .pricing-text {
   padding: 6vw;
+  background-color: none;
 }
 
 .pricing-text p {
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.6em;
+
   color: var(--color3);
   font-weight: bold;
 }
@@ -575,11 +593,9 @@ ul li {
 
 /* CONTACT */
 
-#contact {
-  background-color: var(--shade3);
-}
-
 .contact-container-main {
+  padding: 1em;
+  background-color: var(--shade3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -596,12 +612,17 @@ ul li {
   padding-bottom: -5px;
 }
 
+.fa-envelope {
+  font-size: 5em;
+}
+
 .contact-item-map {
   padding: 20px;
   justify-content: left;
 }
 
 .contact-item-text {
+  font-size: 1em;
   padding: 20px;
   justify-content: left;
 }
