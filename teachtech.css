@@ -290,8 +290,10 @@ ul li {
   align-content: flex-end;
   justify-content: center;
   text-align: center;
-  background-color: var(--color3);
+  background-color: #e5e5f7;
+  opacity: 0.95;
   background-image: url(images/manscreen.jpg);
+  background-position: -30vh;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -310,7 +312,11 @@ ul li {
   align-content: flex-end;
   margin-bottom: 10vh;
   text-align: left;
-  text-shadow: 1px black solid;
+  text-shadow: 0.2vw 0.2vw 0.2vw var(--color3);
+}
+
+.hero h1 {
+  /* box-shadow: 10px 10px 10px red; */
 }
 
 .logo-wrapper {
@@ -680,7 +686,8 @@ ul li {
     justify-content: center;
     text-align: center;
     background-color: var(--color3);
-    background-image: url(images/manscreen-mobile.jpg);
+    /* background-position: 20vw; */
+    background-image: url(images/manscreen.jpg);
     background-size: cover;
     background-repeat: no-repeat;
   }
